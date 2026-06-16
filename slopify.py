@@ -4,7 +4,7 @@ import re
 import sys
 import yt_dlp
 
-MUSIC_DIR = os.environ.get("SLOPIFY_DIR", os.path.expanduser("~/storage/music/slopify"))
+MUSIC_DIR = os.environ.get("SLOPIFY_DIR", os.path.expanduser("~/storage/music"))
 PLAYLISTS_DIR = os.path.join(MUSIC_DIR, "_playlists")
 
 RADIO_COUNT = 30
