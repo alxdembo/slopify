@@ -40,13 +40,13 @@ def _slug(text):
 
 def get_song(query):
     with yt_dlp.YoutubeDL(base_opts()) as ydl:
-        ydl.download([f"ytmsearch1:{query}"])
+        ydl.download([f"ytsearch1:{query}"])
 
 
 def get_album(query):
     search_opts = {"quiet": True, "extract_flat": True}
     with yt_dlp.YoutubeDL(search_opts) as ydl:
-        info = ydl.extract_info(f"ytmsearch5:{query} album", download=False)
+        info = ydl.extract_info(f"ytsearch5:{query} album", download=False)
 
     album_url = None
     for entry in info.get("entries") or []:
@@ -67,7 +67,7 @@ def get_album(query):
 def get_radio(query, count=RADIO_COUNT):
     search_opts = {"quiet": True, "extract_flat": True}
     with yt_dlp.YoutubeDL(search_opts) as ydl:
-        info = ydl.extract_info(f"ytmsearch1:{query}", download=False)
+        info = ydl.extract_info(f"ytsearch1:{query}", download=False)
 
     entries = (info.get("entries") or [])
     if not entries:
