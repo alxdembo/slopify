@@ -27,21 +27,6 @@ cat >> "$SHELL_RC" << EOF
 s() { $SLOPIFY s "\$@"; }
 a() { $SLOPIFY a "\$@"; }
 r() { $SLOPIFY r "\$@"; }
-_slopify_banner() {
-    local stamp="\$HOME/.slopify_banner_date"
-    local today=\$(date +%Y-%m-%d)
-    if [ ! -f "\$stamp" ] || [ "\$(cat \$stamp)" != "\$today" ]; then
-        cat << 'BANNER'
-
- ▄▄▄▄ ▄▄     ▄▄▄  ▄▄▄▄  ▄▄ ▄▄▄▄▄ ▄▄ ▄▄
-███▄▄ ██    ██▀██ ██▄█▀ ██ ██▄▄  ▀███▀
-▄▄██▀ ██▄▄▄ ▀███▀ ██    ██ ██      █
-
-BANNER
-        echo "\$today" > "\$stamp"
-    fi
-}
-_slopify_banner
 # slopify-end
 EOF
 

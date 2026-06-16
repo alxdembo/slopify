@@ -101,7 +101,14 @@ def _write_m3u(name, files):
 
 COMMANDS = {"s": get_song, "a": get_album, "r": get_radio}
 
+BANNER = """
+ ▄▄▄▄ ▄▄     ▄▄▄  ▄▄▄▄  ▄▄ ▄▄▄▄▄ ▄▄ ▄▄
+███▄▄ ██    ██▀██ ██▄█▀ ██ ██▄▄  ▀███▀
+▄▄██▀ ██▄▄▄ ▀███▀ ██    ██ ██      █
+"""
+
 if __name__ == "__main__":
+    print(BANNER)
     if len(sys.argv) < 3:
         print("Usage: slopify <s|a|r> <query>")
         print("  s master of puppets")
